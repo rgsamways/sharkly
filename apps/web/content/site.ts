@@ -7,7 +7,7 @@ export const site = {
    * An address that receives mail, shown on the privacy and terms pages. Leave it empty until a
    * mailbox exists: the pages leave the contact section out instead of showing a dead address.
    */
-  contactEmail: "",
+  contactEmail: "hello@sharkly.ca",
   /** When the privacy and terms pages were last changed. Update it whenever you edit them. */
   legalUpdated: "October 23, 2026",
   /** Newsletters are blocked in production until this is set (anti-spam law requires it). */
