@@ -8,6 +8,7 @@ export const site = {
     { label: "Sharks", href: "/sharks" },
     { label: "Shark of the Month", href: "/shark-of-the-month" },
     { label: "Facts", href: "/facts" },
+    { label: "Quiz", href: "/quiz" },
     { label: "The club", href: "/join" },
   ],
 };
