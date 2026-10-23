@@ -10,7 +10,8 @@ export function SignedOutLinks() {
         Sign in
       </LinkButton>
       <LinkButton href="/join" className="px-4">
-        Join<span className="hidden sm:inline">&nbsp;the club</span>
+        <span className="sm:hidden">Join</span>
+        <span className="hidden sm:inline">Join the club</span>
       </LinkButton>
     </div>
   );

@@ -14,4 +14,4 @@
 
 - [x] 3.1 Check the quiz, a result and the home page at 360px wide: side margins, no sideways scrolling, and 44px tap targets
 - [x] 3.2 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 3.3 After merge, verify `/quiz` and a result on sharkly.ca
+- [x] 3.3 After merge, verify `/quiz` and a result on sharkly.ca
