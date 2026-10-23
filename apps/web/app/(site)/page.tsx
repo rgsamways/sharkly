@@ -7,6 +7,7 @@ import { SharkPicture } from "@/components/shark-picture";
 import { site } from "@/content/site";
 import { getFactOfTheDay } from "@/lib/facts";
 import { getHomeFeatures } from "@/lib/species";
+import { openRound } from "@/lib/voting";
 import { monthLabel } from "@/lib/species-rules";
 
 export default function HomePage() {
@@ -17,6 +18,9 @@ export default function HomePage() {
       </Suspense>
       <Suspense fallback={null}>
         <FactOfTheDay />
+      </Suspense>
+      <Suspense fallback={null}>
+        <VoteCard />
       </Suspense>
       <section className="mt-12 rounded-2xl border border-line bg-surface p-6 text-center sm:p-8">
         <h2 className="font-display text-3xl font-semibold">Which shark are you?</h2>
@@ -109,6 +113,26 @@ async function FactOfTheDay() {
           Sources and more facts
         </Link>
       </p>
+    </section>
+  );
+}
+
+/** Invites people to vote while a round is open. Leaves itself out when voting is closed. */
+async function VoteCard() {
+  await connection();
+  const round = openRound();
+  if (!round) return null;
+  return (
+    <section className="mt-12 rounded-2xl border border-line bg-surface p-6 text-center sm:p-8">
+      <h2 className="font-display text-3xl font-semibold">
+        Help choose {monthLabel(round.month)}&apos;s shark
+      </h2>
+      <p className="mx-auto mt-2 max-w-xl text-lg text-muted">
+        Three sharks, one winner, and club members decide.
+      </p>
+      <div className="mt-5 flex justify-center">
+        <LinkButton href="/vote">See the candidates</LinkButton>
+      </div>
     </section>
   );
 }
