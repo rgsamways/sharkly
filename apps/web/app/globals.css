@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* shadcn's dark: variant follows the theme switch (data-theme on <html>). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+ * Design tokens. Light is the default (friendly for young readers); data-theme="dark" is the
+ * deep-sea version. One accent, a bright reef teal, plus a warm coral for small highlights.
+ */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f3f9fb;
+  --surface-1: #ffffff;
+  --surface-2: #e4f0f4;
+  --surface-3: #cfe3ea;
+  --line: rgb(7 40 56 / 0.12);
+  --line-strong: rgb(7 40 56 / 0.28);
+  --fg: #072838;
+  --muted: #4b6877;
+  --accent: #0b7285;
+  --accent-fg: #ffffff;
+  --highlight: #e8590c;
+  --ok: #1f8a4c;
+  --warn: #9a6b00;
+  --bad: #c4372a;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #04141c;
+  --surface-1: #082230;
+  --surface-2: #0d2e40;
+  --surface-3: #143b50;
+  --line: rgb(255 255 255 / 0.1);
+  --line-strong: rgb(255 255 255 / 0.2);
+  --fg: #eaf6fa;
+  --muted: #8fb0be;
+  --accent: #3bc9db;
+  --accent-fg: #04141c;
+  --highlight: #ff922b;
+  --ok: #6fcf97;
+  --warn: #f2c94c;
+  --bad: #ff7a6b;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-highlight: var(--highlight);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+
+  /* shadcn/ui colour names, mapped onto our tokens so its components match the site. */
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-card: var(--surface-1);
+  --color-card-foreground: var(--fg);
+  --color-popover: var(--surface-1);
+  --color-popover-foreground: var(--fg);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--accent-fg);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--fg);
+  --color-muted-foreground: var(--muted);
+  --color-border: var(--line);
+  --color-input: var(--line-strong);
+  --color-ring: var(--highlight);
+  --color-destructive: var(--bad);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --font-display: var(--font-fredoka), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
