@@ -14,4 +14,4 @@
 
 - [x] 3.1 Check the home page, `/sharks`, a profile and `/credits` at 360px wide: no sideways scrolling and photos within their cards
 - [x] 3.2 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 3.3 Run the migration and then the seed against the production database as separate commands before merging, and verify the photos on sharkly.ca after the deploy
+- [x] 3.3 Run the migration and then the seed against the production database as separate commands before merging, and verify the photos on sharkly.ca after the deploy
