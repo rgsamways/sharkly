@@ -568,5 +568,364 @@ export const factEntries: FactEntry[] = [
     ],
   },
 
+  // ---- More: myths ----
+  {
+    slug: "myth-great-white-biggest",
+    topic: "myths",
+    title: "The great white is the biggest shark.",
+    verdict: "false",
+    shortAnswer: "The whale shark is the biggest shark, and the great white is much smaller.",
+    body: "NOAA Fisheries calls the whale shark the largest shark, at about 12 metres (40 feet). The biggest great whites measured reliably are about 6 metres. The great white is the biggest shark that hunts large animals, while the whale shark eats tiny plankton.",
+    sources: [
+      {
+        label: "NOAA Fisheries: Fun facts about shocking sharks",
+        url: "https://www.fisheries.noaa.gov/national/outreach-and-education/fun-facts-about-shocking-sharks",
+      },
+      {
+        label: "Florida Museum: Sharks FAQ",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/sharks/faq/",
+      },
+    ],
+  },
+  {
+    slug: "myth-attracted-to-yellow",
+    topic: "myths",
+    title: "Sharks are attracted to bright colours like yellow.",
+    verdict: "false",
+    shortAnswer:
+      "Sharks probably can't see colour the way we do, so yellow isn't a magnet for them.",
+    body: "In a study at the University of Queensland, the sharks tested had only one kind of colour-sensing cell in their eyes, where people have three. That means they probably can't tell colours apart the way we can, so a colour like yellow is unlikely to be special to them.",
+    // Medium confidence: only some species were tested (see the colour-blind entry above).
+    sources: [
+      {
+        label: "University of Queensland: Sharks may be colour blind",
+        url: "https://news.uq.edu.au/2011-01-25-sharks-may-be-colour-blind-study-reveals",
+      },
+    ],
+  },
+  {
+    slug: "myth-all-sharks-dangerous",
+    topic: "myths",
+    title: "All sharks are dangerous to people.",
+    verdict: "false",
+    shortAnswer: "Most sharks are harmless to people, and only a few kinds cause most attacks.",
+    body: "There are more than 500 kinds of sharks. The Florida Museum's records name the great white, tiger and bull sharks as the three behind the most recorded attacks. Even so, it is wise to treat any big shark with respect.",
+    sources: [
+      {
+        label: "Florida Museum: Species implicated in attacks",
+        url: "https://www.floridamuseum.ufl.edu/shark-attacks/factors/species-implicated/",
+      },
+    ],
+  },
+  {
+    slug: "myth-teeth-are-bone",
+    topic: "myths",
+    title: "Shark teeth are made of bone.",
+    verdict: "false",
+    shortAnswer: "Shark teeth are hard like bone, but they are made of something different.",
+    body: "The Natural History Museum says shark teeth are made of a very hard coating called enameloid over a core of dentine. A shark's skeleton is made of cartilage, so sharks have no true bones at all.",
+    sources: [
+      {
+        label: "Natural History Museum: What can shark teeth tell us?",
+        url: "https://www.nhm.ac.uk/discover/what-can-shark-teeth-tell-us.html",
+      },
+      {
+        label: "Florida Museum: Fossil shark teeth",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/sharks/fossil/shark-teeth/",
+      },
+    ],
+  },
+  {
+    slug: "myth-only-salt-water",
+    topic: "myths",
+    title: "Sharks only live in salt water.",
+    verdict: "false",
+    shortAnswer:
+      "Most sharks live in the sea, but a few, like the bull shark, also swim far up rivers.",
+    body: "The Florida Museum says bull sharks live in both salt water and fresh water, and have been found hundreds of miles up rivers. Most sharks do stay in the sea, though.",
+    sources: [
+      {
+        label: "Florida Museum: Bull shark",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/bull-shark/",
+      },
+    ],
+  },
+  {
+    slug: "myth-megalodon-still-alive",
+    topic: "myths",
+    title: "Megalodon might still be alive in the deep ocean.",
+    verdict: "false",
+    shortAnswer:
+      "Megalodon died out millions of years ago, and there is no evidence it is still alive.",
+    body: "The Natural History Museum says megalodon teeth are only found in rocks from between about 20 million and 3.6 million years ago. Nobody has ever found younger ones, and there are no confirmed sightings.",
+    sources: [
+      {
+        label: "Natural History Museum: Is megalodon still alive?",
+        url: "https://www.nhm.ac.uk/discover/is-megalodon-still-alive.html",
+      },
+    ],
+  },
+  {
+    slug: "myth-sharks-eat-all-the-time",
+    topic: "myths",
+    title: "Sharks have to eat all the time.",
+    verdict: "false",
+    shortAnswer: "Sharks don't eat constantly, and some can go weeks between meals.",
+    body: "NOAA Fisheries says sharks can go up to about six weeks without feeding. Big, active hunters do eat more often than that, but they do not need to eat all the time.",
+    // Medium confidence: it varies a lot by species and by how active the shark is.
+    sources: [
+      {
+        label: "NOAA Fisheries: Fun facts about shocking sharks",
+        url: "https://www.fisheries.noaa.gov/national/outreach-and-education/fun-facts-about-shocking-sharks",
+      },
+    ],
+  },
+
+  // ---- More: babies and life ----
+  {
+    slug: "babies-whale-shark-300-pups",
+    topic: "babies",
+    title: "A whale shark mother carrying 300 babies",
+    body: "A whale shark caught off Taiwan was carrying about 300 young inside her, the biggest litter known for any shark. Each one was roughly half a metre long.",
+    // Medium confidence: only one pregnant female has ever been examined.
+    sources: [
+      {
+        label: "Florida Museum: Whale shark profile",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/rhincodon-typus/",
+      },
+    ],
+  },
+  {
+    slug: "babies-blue-shark-big-litters",
+    topic: "babies",
+    title: "Blue sharks can have big litters",
+    body: "A blue shark mother has about 30 pups at a time on average, and the Florida Museum says she can have up to 80. That is one of the biggest litters among sharks that give birth to live young.",
+    // Medium confidence: other sources report even larger litters, so the cautious museum figure is used.
+    sources: [
+      {
+        label: "Florida Museum: Blue shark profile",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/blue-shark/",
+      },
+    ],
+  },
+  {
+    slug: "babies-leonie-the-zebra-shark",
+    topic: "babies",
+    title: "A zebra shark had pups with no father",
+    body: 'In 2016 a zebra shark named Leonie at an aquarium in Australia had three pups after living apart from males for years. DNA tests showed the pups carried only her genes, a "virgin birth" that scientists call parthenogenesis.',
+    sources: [
+      {
+        label: "Live Science: Zebra shark has virgin births",
+        url: "https://www.livescience.com/57536-zebra-shark-has-virgin-births.html",
+      },
+    ],
+  },
+  {
+    slug: "babies-lemon-sharks-come-home",
+    topic: "babies",
+    title: "Lemon sharks come home to have their pups",
+    body: "Scientists studying lemon sharks at Bimini, in the Bahamas, found that females return to the same shallow lagoon where they were born to have their own pups.",
+    // Medium confidence: a small number of females were studied.
+    sources: [
+      {
+        label: "National Geographic: Sharks return to their birthplace to give birth",
+        url: "https://www.nationalgeographic.com/news/2013/12/131206-lemon-sharks-return-birthplace-homing-bahamas-science/",
+      },
+    ],
+  },
+
+  // ---- More: long ago ----
+  {
+    slug: "history-helicoprion-buzz-saw",
+    topic: "history",
+    title: "Helicoprion: the fish with a buzz saw in its jaw",
+    body: "Helicoprion lived about 270 to 290 million years ago and had a spiral of teeth in its lower jaw, like a round buzz saw. It was not a true shark: its closest living relatives are the deep-sea ratfish.",
+    sources: [
+      {
+        label: "Smithsonian Magazine: Whorl-toothed fishes",
+        url: "https://www.smithsonianmag.com/science-nature/sharklike-fish-with-weird-buzz-saw-jaws-sliced-through-the-seas-then-vanished-now-paleontologists-are-unraveling-their-secrets-180987960/",
+      },
+    ],
+  },
+  {
+    slug: "history-megalodon-vanished",
+    topic: "history",
+    title: "When did Megalodon disappear?",
+    body: "A 2019 study of fossils suggested that Megalodon was probably gone by about 3.6 million years ago. Researchers think great white sharks may have played a part, but the cause is still debated.",
+    // Medium confidence: the cause of the extinction is still debated.
+    sources: [
+      {
+        label: "National Geographic: Megalodon is extinct",
+        url: "https://www.nationalgeographic.com/science/article/megalodon-extinct-great-white-shark",
+      },
+    ],
+  },
+  {
+    slug: "history-vertebrae-rings",
+    topic: "history",
+    title: "Scientists count rings in a shark's backbone",
+    body: "Scientists estimate a shark's age by counting pairs of light and dark bands in its backbone, a bit like tree rings. NOAA researchers found the bands are tied to how fast the shark grows, not to years, so some older sharks have been guessed to be younger than they are.",
+    sources: [
+      {
+        label: "NOAA Fisheries: Shark vertebral band pairs are related to growth, not time",
+        url: "https://www.fisheries.noaa.gov/feature-story/researchers-demonstrate-shark-vertebral-band-pairs-are-related-growth-not-time",
+      },
+    ],
+  },
+
+  // ---- More: records ----
+  {
+    slug: "records-great-white-round-trip",
+    topic: "records",
+    title: "A great white swam to Australia and back",
+    body: "A great white shark named Nicole was tagged off South Africa in 2003 and swam to Australia and back, about 20,000 kilometres in nine months. At the time it was the first round trip across an ocean ever recorded for a shark.",
+    sources: [
+      {
+        label: "National Geographic: Great white breaks distance and speed records",
+        url: "https://www.nationalgeographic.com/animals/article/great-white-breaks-distance-speed-records-for-sharks",
+      },
+    ],
+  },
+  {
+    slug: "records-great-white-300-teeth",
+    topic: "records",
+    title: "A great white has about 300 teeth",
+    body: "A great white has about 300 serrated teeth set in several rows. Most of them are spares that move forward like a conveyor belt as the front teeth fall out.",
+    // Medium confidence: counts vary a little between sources, so "about" is used.
+    sources: [
+      {
+        label: "National Geographic: Great white shark",
+        url: "https://www.nationalgeographic.com/animals/fish/facts/great-white-shark",
+      },
+    ],
+  },
+  {
+    slug: "records-basking-shark-filter",
+    topic: "records",
+    title: "A basking shark filters 2,000 tons of water an hour",
+    body: "The basking shark swims with its huge mouth open and filters roughly 2,000 tons of seawater an hour to catch tiny plankton. It is the second-largest fish after the whale shark, and it is not a danger to people.",
+    // Medium confidence: filtering figures differ between sources.
+    sources: [
+      {
+        label: "Florida Museum: Basking shark profile",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/cetorhinus-maximus/",
+      },
+    ],
+  },
+
+  // ---- More: senses and body ----
+  {
+    slug: "anatomy-great-white-two-tone",
+    topic: "anatomy",
+    title: "Great whites wear a dark-and-pale coat",
+    body: "A great white is grey-black on top and pale to white underneath, with a sudden colour change along its sides. Scientists call this countershading. It helps the shark blend in when seen from above or from below.",
+    // Medium confidence: the source gives the colours, but not the camouflage explanation.
+    sources: [
+      {
+        label: "Florida Museum: Great white shark profile",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/carcharodon-carcharias/",
+      },
+    ],
+  },
+  {
+    slug: "anatomy-whale-shark-filter-screens",
+    topic: "anatomy",
+    title: "Whale sharks filter food through built-in screens",
+    body: "A whale shark has 20 filtering pads, 10 on each side, inside its huge mouth, and its gill slits act as filter screens. The screens keep food about 2 to 3 millimetres across or larger, and the shark often feeds head-up near the surface.",
+    sources: [
+      {
+        label: "Florida Museum: Whale shark profile",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/rhincodon-typus/",
+      },
+    ],
+  },
+  {
+    slug: "anatomy-whale-shark-spots",
+    topic: "anatomy",
+    title: "Every whale shark has its own spot pattern",
+    body: "The pale spots on a whale shark's back are unique, a bit like a fingerprint. Scientists adapted star-mapping software from astronomy to match photos and recognise individual sharks.",
+    sources: [
+      {
+        label: "ScienceDaily: Why a whale shark's spots could help save its skin",
+        url: "https://www.sciencedaily.com/releases/2005/10/051007093017.htm",
+      },
+    ],
+  },
+  {
+    slug: "anatomy-lanternshark-glow-hormones",
+    topic: "anatomy",
+    title: "Some lanternsharks switch their glow with hormones",
+    body: "The velvet belly lanternshark makes its own light, and researchers found that hormones, not nerves, control it. Melatonin gives a slow glow that lasts for hours, and another hormone, alpha-MSH, turns it off. The glow may help the shark hide or signal, though that is still a guess.",
+    sources: [
+      {
+        label: "Science News: Hormones give lantern sharks the glow",
+        url: "https://www.sciencenews.org/article/hormones-give-lantern-sharks-glow",
+      },
+    ],
+  },
+  {
+    slug: "anatomy-cookiecutter-round-bites",
+    topic: "anatomy",
+    title: "Cookiecutter sharks bite perfectly round plugs",
+    body: "The small cookiecutter shark clamps onto bigger animals with its suction lips and cuts out a round chunk of flesh. It lives deep by day, below 1,000 metres, and rises toward the surface at night to feed. It is considered harmless to people.",
+    sources: [
+      {
+        label: "Florida Museum: Cookiecutter shark profile",
+        url: "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/isistius-brasiliensis/",
+      },
+    ],
+  },
+  {
+    slug: "senses-hammerhead-wide-view",
+    topic: "senses",
+    title: "Hammerheads see a long way around",
+    body: "A scalloped hammerhead's wide head spreads its eyes far apart, so it can see nearly all the way around it. Its two eyes also overlap in front for 3D vision, more than in pointy-nosed sharks.",
+    // Medium confidence: the exact degrees differ between outlets, so none are quoted.
+    sources: [
+      {
+        label: "ScienceDaily: Hammerhead vision study",
+        url: "https://sciencedaily.com/releases/2009/11/091127101034.htm",
+      },
+    ],
+  },
+  {
+    slug: "senses-smell-not-magic",
+    topic: "senses",
+    title: "A shark's nose is good, but not magic",
+    body: "Sharks have a very good sense of smell, but tests in Florida found it is no better than a typical fish's. The famous idea that a shark can smell one drop of blood in an Olympic pool was not supported.",
+    sources: [
+      {
+        label: "Live Science: Shark smell myth found fishy",
+        url: "https://www.livescience.com/8797-shark-smell-myth-fishy.html",
+      },
+    ],
+  },
+  {
+    slug: "senses-shark-brains",
+    topic: "senses",
+    title: "Many sharks have surprisingly big brains",
+    body: "Many sharks have a brain size for their body size that is comparable to birds and mammals. Scientists who study hundreds of shark brains can even guess a shark's senses and behaviour from the shape of its brain.",
+    // Medium confidence: one researcher's comment in a magazine article, and she said "many", not "all".
+    sources: [
+      {
+        label: "Discover Magazine: What can shark brains tell us?",
+        url: "https://www.discovermagazine.com/studying-shark-brains-42979",
+      },
+    ],
+  },
+  {
+    slug: "senses-tonic-immobility",
+    topic: "senses",
+    title: "Some sharks go limp when flipped upside down",
+    body: "Turn certain sharks upside down and they go still and floppy, a state called tonic immobility. A 2025 study found that only some species do it, and nobody has proven what the freeze is for.",
+    // Medium confidence: the number of species that react differs between reports, so none is quoted.
+    sources: [
+      {
+        label: "James Cook University: 'Playing dead' overrated for sharks and rays",
+        url: "https://www.jcu.edu.au/news/releases/2025/june/playing-dead-overrated-for-sharks,-rays",
+      },
+    ],
+  },
+
   // FACTS-BELOW
 ];
