@@ -4,6 +4,7 @@ import { formatLength, monthLabel, sizeBand, sizeBandLabel } from "@/lib/species
 import { ConservationLabel } from "./conservation-label";
 import { LinkButton } from "./link-button";
 import { SharkPicture } from "./shark-picture";
+import { Sparkle } from "./sparkle";
 import { SizeBar } from "./size-bar";
 
 /** The big "this month's shark" block, used on the home page and the monthly page. */
@@ -19,9 +20,10 @@ export function FeaturedSharkHero({
   const { species: shark, month, teaser } = feature;
   const Heading = heading;
   return (
-    <section className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
+    <section className="relative isolate grid items-center gap-6 md:grid-cols-2 md:gap-10">
+      <div aria-hidden className="glitter absolute -inset-4 -z-10" />
       <div>
-        <p className="text-sm font-bold tracking-wide text-highlight uppercase">
+        <p className="eyebrow text-sm font-bold tracking-wide text-highlight uppercase">
           {isCurrent ? "Shark of the Month" : "Our latest Shark of the Month"} · {monthLabel(month)}
         </p>
         <Heading className="mt-1 font-display text-4xl font-semibold sm:text-5xl">
@@ -42,14 +44,32 @@ export function FeaturedSharkHero({
           </LinkButton>
         </div>
       </div>
-      <SharkPicture
-        name={shark.commonName}
-        slug={shark.slug}
-        imageUrl={shark.imageUrl}
-        imageCredit={shark.imageCredit}
-        imageCreditUrl={shark.imageCreditUrl}
-        priority
-      />
+      <div className="relative">
+        <SharkPicture
+          name={shark.commonName}
+          slug={shark.slug}
+          imageUrl={shark.imageUrl}
+          imageCredit={shark.imageCredit}
+          imageCreditUrl={shark.imageCreditUrl}
+          priority
+        />
+        <Sparkle size={22} className="-top-2.5 -right-1.5" delay={0.2} />
+        <Sparkle
+          size={12}
+          tone="accent"
+          className="top-1/3 -left-2 hidden sm:block"
+          delay={1.1}
+          duration={5}
+        />
+        <Sparkle size={16} className="-bottom-3 left-1/4" delay={2.1} duration={4.5} />
+        <Sparkle
+          size={9}
+          tone="accent"
+          className="-bottom-1 -right-2 hidden sm:block"
+          delay={0.8}
+          duration={3}
+        />
+      </div>
     </section>
   );
 }

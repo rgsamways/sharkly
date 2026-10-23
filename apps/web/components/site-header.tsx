@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { site } from "@/content/site";
 import { HeaderAccount, SignedOutLinks } from "./header-account";
+import { Sparkle } from "./sparkle";
 
 /**
  * Logo and account buttons on one row. The site menu sits under them on a phone as a strip that
@@ -13,7 +14,11 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-2.5 sm:px-6 md:flex-nowrap">
         <Link href="/" className="font-display text-2xl font-semibold text-accent">
           <span aria-hidden>🦈 </span>
-          {site.name}
+          <span className="relative inline-block pr-3">
+            <span className="logo-shimmer">{site.name}</span>
+            <Sparkle size={11} className="-top-0.5 right-0" delay={0.4} />
+            <Sparkle size={6} tone="accent" className="top-3.5 -right-1" delay={1.6} duration={3} />
+          </span>
         </Link>
         <nav
           aria-label="Main"

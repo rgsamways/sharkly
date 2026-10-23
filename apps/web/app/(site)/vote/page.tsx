@@ -52,7 +52,7 @@ async function Round() {
 
   return (
     <>
-      <p className="text-sm font-bold tracking-wide text-highlight uppercase">Club vote</p>
+      <p className="eyebrow text-sm font-bold tracking-wide text-highlight uppercase">Club vote</p>
       <h1 className="mt-1 font-display text-4xl font-semibold">
         Help choose {monthLabel(round.month)}&apos;s shark
       </h1>
