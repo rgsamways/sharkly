@@ -5,6 +5,7 @@ import { LinkButton } from "@/components/link-button";
 import { SharkPicture } from "@/components/shark-picture";
 import { quizResults } from "@/content/quiz";
 import { speciesImages } from "@/content/species-images";
+import { quizResultPreview } from "@/lib/previews";
 import { creditText } from "@/lib/species-images";
 
 export function generateStaticParams() {
@@ -15,8 +16,7 @@ export async function generateMetadata({
   params,
 }: PageProps<"/quiz/result/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const result = quizResults.find((r) => r.slug === slug);
-  return { title: result ? `I'm a ${result.title}!` : "Which shark are you?" };
+  return quizResultPreview(slug) ?? { title: "Which shark are you?" };
 }
 
 export default async function QuizResultPage({ params }: PageProps<"/quiz/result/[slug]">) {

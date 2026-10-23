@@ -7,10 +7,14 @@ import { ConservationLabel } from "@/components/conservation-label";
 import { SharkPicture } from "@/components/shark-picture";
 import { SizeBar } from "@/components/size-bar";
 import { speciesEntries } from "@/content/species";
+import { sharkPreview } from "@/lib/previews";
 import { getSpeciesBySlug } from "@/lib/species";
 import { formatLength, habitatLabel, sizeBand, sizeBandLabel } from "@/lib/species-rules";
 
-export const metadata: Metadata = { title: "Shark profile" };
+export async function generateMetadata({ params }: PageProps<"/sharks/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  return sharkPreview(slug) ?? { title: "Shark profile" };
+}
 
 /**
  * The known slugs come from the content file, not the database, so building the site needs no
