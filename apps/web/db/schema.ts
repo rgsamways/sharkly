@@ -5,6 +5,7 @@ import * as mailing from "./mailing-schema";
 import * as newsletter from "./newsletter-schema";
 import * as speciesTables from "./species-schema";
 import * as factTables from "./facts-schema";
+import * as voteTables from "./votes-schema";
 
 export const schema = {
   ...auth,
@@ -13,6 +14,7 @@ export const schema = {
   ...newsletter,
   ...speciesTables,
   ...factTables,
+  ...voteTables,
 };
 
 /** The database handle every function expects: `drizzle(pool, { schema })`. */

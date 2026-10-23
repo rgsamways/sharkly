@@ -51,3 +51,7 @@ The shark facts and "myth or fact?" answers live in `apps/web/content/facts.ts`,
 ## Photos
 
 Species photos come from Wikimedia Commons (public domain, CC BY, or CC BY-SA only) and are listed with their photographer and license in `apps/web/content/species-images.ts`; `seed:content` copies them onto the species rows and refuses a photo with no author or an unaccepted license. Credits show under the big photos and on `/credits`, which the footer links to. Photos load straight from Wikimedia's servers.
+
+## Voting
+
+Members vote on a future Shark of the Month at `/vote`. Rounds and candidates are in `apps/web/content/voting.ts`; the open round is the earliest whose month has not started. One vote per member per round is enforced by the database. When a round ends, add the winner to `featuredMonths` in `content/species.ts` by hand and run `seed:content`.

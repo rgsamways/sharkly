@@ -8,6 +8,7 @@ export default defineConfig({
     "./db/newsletter-schema.ts",
     "./db/species-schema.ts",
     "./db/facts-schema.ts",
+    "./db/votes-schema.ts",
   ],
   out: "./drizzle",
   dialect: "postgresql",
