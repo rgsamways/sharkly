@@ -8,6 +8,13 @@
       "when": 1792764022560,
       "tag": "0000_peaceful_black_widow",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792772445016,
+      "tag": "0001_slimy_goliath",
+      "breakpoints": true
     }
   ]
 }

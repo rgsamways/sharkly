@@ -4,5 +4,9 @@ export const site = {
   /** Newsletters are blocked in production until this is set (anti-spam law requires it). */
   postalAddress: "",
   /** The public menu. Pages are added here as they are built. */
-  nav: [{ label: "The club", href: "/join" }],
+  nav: [
+    { label: "Sharks", href: "/sharks" },
+    { label: "Shark of the Month", href: "/shark-of-the-month" },
+    { label: "The club", href: "/join" },
+  ],
 };

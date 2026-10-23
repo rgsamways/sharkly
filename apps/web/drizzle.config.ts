@@ -6,6 +6,7 @@ export default defineConfig({
     "./db/audit-schema.ts",
     "./db/mailing-schema.ts",
     "./db/newsletter-schema.ts",
+    "./db/species-schema.ts",
   ],
   out: "./drizzle",
   dialect: "postgresql",

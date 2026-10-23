@@ -27,3 +27,15 @@ Static page mockups are in `docs/design/mockups/` (open `index.html`).
 ## Accounts
 
 Joining is free at `/join`; sign-in is at `/sign-in`. With no `RESEND_API_KEY` set, emails (confirm your email, sign-in link, password reset) are printed in the `pnpm dev` terminal instead of being sent, so you can copy the link from there.
+
+## Species content
+
+The sharks live in `apps/web/content/species.ts`: the text, sizes, sources and conservation statuses, plus the Shark of the Month schedule at the bottom. Edit that file in a pull request, then load it into a database with:
+
+```
+pnpm --filter @sharkly/web seed:species      # uses DATABASE_URL from apps/web/.env.local
+```
+
+It is safe to run more than once: species are matched by their slug and months by their month. It refuses to load an entry with no source link. New or changed database tables need `pnpm --filter @sharkly/web db:migrate` first.
+
+Conservation statuses come from Wikipedia and FishBase, which cite the IUCN Red List. The IUCN site itself was not opened, so check the IUCN links before turning search indexing on.
