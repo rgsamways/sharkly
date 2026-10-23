@@ -4,8 +4,16 @@ import * as audit from "./audit-schema";
 import * as mailing from "./mailing-schema";
 import * as newsletter from "./newsletter-schema";
 import * as speciesTables from "./species-schema";
+import * as factTables from "./facts-schema";
 
-export const schema = { ...auth, ...audit, ...mailing, ...newsletter, ...speciesTables };
+export const schema = {
+  ...auth,
+  ...audit,
+  ...mailing,
+  ...newsletter,
+  ...speciesTables,
+  ...factTables,
+};
 
 /** The database handle every function expects: `drizzle(pool, { schema })`. */
 export type AppDb = NodePgDatabase<typeof schema>;

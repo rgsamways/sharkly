@@ -265,7 +265,7 @@ export const speciesEntries: SpeciesEntry[] = [
     summary:
       "The fastest known shark, built like a torpedo. It roams warm and temperate oceans, hunting fast fish such as tuna.",
     weirdBit:
-      "A mako can reach bursts of about 74 kilometres an hour. It is also one of the few partly warm-blooded sharks, which helps its muscles work harder.",
+      "The mako is the fastest shark known, measured at about 50 kilometres an hour, with reports of even faster bursts. It is also one of the few partly warm-blooded sharks, which helps its muscles work harder.",
     sources: [wiki("Shortfin_mako_shark")],
   },
   {

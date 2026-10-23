@@ -22,9 +22,16 @@ function Silhouette({ name, slug, compact }: { name: string; slug: string; compa
       <svg viewBox="0 0 120 60" className="w-2/3 text-white/85" aria-hidden>
         <path
           fill="currentColor"
-          d="M4 34c14-14 34-22 58-22 8 0 14 2 20 6l8-14c1-2 4-1 4 1l-2 18c8 2 16 6 22 12-8-2-16-2-24 0l2 16c0 2-3 3-4 1l-10-10c-10 6-22 8-34 6C26 46 12 42 4 34Z"
+          d="M6 38C22 28 40 24 58 24L66 8C70 18 74 22 80 25C92 26 102 30 110 34L116 18C114 28 113 33 112 37L118 54C108 46 100 44 92 44C74 46 62 49 52 49L42 58L40 49C24 48 12 44 6 38Z"
         />
-        <circle cx="30" cy="30" r="2" fill="#06344a" />
+        <circle cx="21" cy="37" r="1.8" fill="#06344a" />
+        <path
+          d="M34 34l-2 8M38 34l-2 8M42 34l-2 8"
+          stroke="#06344a"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          fill="none"
+        />
       </svg>
       {!compact && (
         <span className="absolute bottom-2 left-3 text-xs tracking-wide text-white/70">
