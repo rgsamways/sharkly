@@ -15,6 +15,13 @@
       "when": 1792772445016,
       "tag": "0001_slimy_goliath",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792774110502,
+      "tag": "0002_striped_adam_destine",
+      "breakpoints": true
     }
   ]
 }

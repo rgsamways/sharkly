@@ -33,9 +33,13 @@ Joining is free at `/join`; sign-in is at `/sign-in`. With no `RESEND_API_KEY` s
 The sharks live in `apps/web/content/species.ts`: the text, sizes, sources and conservation statuses, plus the Shark of the Month schedule at the bottom. Edit that file in a pull request, then load it into a database with:
 
 ```
-pnpm --filter @sharkly/web seed:species      # uses DATABASE_URL from apps/web/.env.local
+pnpm --filter @sharkly/web seed:content      # uses DATABASE_URL from apps/web/.env.local
 ```
 
 It is safe to run more than once: species are matched by their slug and months by their month. It refuses to load an entry with no source link. New or changed database tables need `pnpm --filter @sharkly/web db:migrate` first.
 
 Conservation statuses come from Wikipedia and FishBase, which cite the IUCN Red List. The IUCN site itself was not opened, so check the IUCN links before turning search indexing on.
+
+## Facts
+
+The shark facts and "myth or fact?" answers live in `apps/web/content/facts.ts`, each with its sources, and are loaded by the same `seed:content` command. The home page shows one fact a day, chosen by the Toronto date, from the entries that are not myths. Entries marked as medium confidence in comments there are worth a second look before search indexing is switched on.

@@ -11,7 +11,8 @@
     "test": "vitest run --passWithNoTests",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "seed:species": "tsx --env-file=.env.local scripts/seed-species.ts"
+    "seed:species": "tsx --env-file=.env.local scripts/seed-species.ts",
+    "seed:content": "tsx --env-file=.env.local scripts/seed-species.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

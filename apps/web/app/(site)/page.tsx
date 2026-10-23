@@ -5,6 +5,7 @@ import { FeaturedSharkHero } from "@/components/featured-shark";
 import { LinkButton } from "@/components/link-button";
 import { SharkPicture } from "@/components/shark-picture";
 import { site } from "@/content/site";
+import { getFactOfTheDay } from "@/lib/facts";
 import { getHomeFeatures } from "@/lib/species";
 import { monthLabel } from "@/lib/species-rules";
 
@@ -13,6 +14,9 @@ export default function HomePage() {
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 sm:py-12">
       <Suspense fallback={<Welcome />}>
         <Features />
+      </Suspense>
+      <Suspense fallback={null}>
+        <FactOfTheDay />
       </Suspense>
       <section className="mt-12 rounded-2xl border border-line bg-surface p-6 text-center sm:p-8">
         <h2 className="font-display text-3xl font-semibold">Join the Shark of the Month club</h2>
@@ -77,5 +81,24 @@ async function Features() {
         </section>
       )}
     </>
+  );
+}
+
+/** One fact a day, the same for everyone. Leaves itself out when there are no facts yet. */
+async function FactOfTheDay() {
+  await connection();
+  const fact = await getFactOfTheDay();
+  if (!fact) return null;
+  return (
+    <section className="mt-12 rounded-2xl border-l-4 border-highlight bg-surface-2 p-5 sm:p-6">
+      <p className="text-xs font-bold tracking-wide text-highlight uppercase">Fact of the day</p>
+      <h2 className="mt-1 font-display text-2xl font-semibold">{fact.title}</h2>
+      <p className="mt-2 text-lg">{fact.body}</p>
+      <p className="mt-3 text-sm">
+        <Link href={`/facts#${fact.slug}`} className="underline underline-offset-4">
+          Sources and more facts
+        </Link>
+      </p>
+    </section>
   );
 }

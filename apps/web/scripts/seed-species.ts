@@ -1,8 +1,8 @@
 /**
- * Copies content/species.ts into the database. Safe to run again: species are matched by slug and
+ * Copies content/species.ts and content/facts.ts into the database. Safe to run again: species are matched by slug and
  * months by month, so a second run changes nothing unless the content changed.
  *
- *   pnpm --filter @sharkly/web seed:species
+ *   pnpm --filter @sharkly/web seed:content
  *
  * It reads DATABASE_URL (from apps/web/.env.local, or the environment) and refuses to load any
  * entry that is missing something the site relies on, such as a source link.
@@ -11,8 +11,11 @@ import { randomUUID } from "node:crypto";
 import { sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/node-postgres";
 import pg from "pg";
+import { factEntries } from "../content/facts";
 import { featuredMonths, speciesEntries } from "../content/species";
+import { facts } from "../db/facts-schema";
 import { sharkOfTheMonth, species } from "../db/species-schema";
+import { FACT_TOPICS, VERDICTS } from "../lib/fact-rules";
 import { HABITATS, IUCN_STATUSES } from "../lib/species-rules";
 
 function check(): string[] {
@@ -52,6 +55,27 @@ function check(): string[] {
     if (months.has(m.month)) problems.push(`${m.month}: month listed twice`);
     months.add(m.month);
     if (!slugs.has(m.slug)) problems.push(`${m.month}: no species with slug "${m.slug}"`);
+  }
+  const factSlugs = new Set<string>();
+  for (const f of factEntries) {
+    const where = f.slug || "(no slug)";
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(f.slug))
+      problems.push(`${where}: slug must be kebab-case`);
+    if (factSlugs.has(f.slug)) problems.push(`${where}: duplicate fact slug`);
+    factSlugs.add(f.slug);
+    if (!FACT_TOPICS.some((t) => t.value === f.topic)) problems.push(`${where}: unknown topic`);
+    if (f.sources.length < 1) problems.push(`${where}: needs at least one source link`);
+    for (const src of f.sources) {
+      if (!/^https:\/\//.test(src.url))
+        problems.push(`${where}: source "${src.label}" needs an https link`);
+    }
+    if (!f.title.trim() || !f.body.trim()) problems.push(`${where}: title and body are required`);
+    if (f.topic === "myths") {
+      if (!f.verdict || !(f.verdict in VERDICTS)) problems.push(`${where}: a myth needs a verdict`);
+      if (!f.shortAnswer?.trim()) problems.push(`${where}: a myth needs a shortAnswer`);
+    } else if (f.verdict || f.shortAnswer) {
+      problems.push(`${where}: only myths have a verdict or shortAnswer`);
+    }
   }
   return problems;
 }
@@ -104,9 +128,27 @@ async function main() {
           });
       }
     });
+    await db.transaction(async (tx) => {
+      for (const f of factEntries) {
+        const values = {
+          slug: f.slug,
+          topic: f.topic,
+          title: f.title,
+          shortAnswer: f.shortAnswer ?? null,
+          verdict: f.verdict ?? null,
+          body: f.body,
+          sources: f.sources,
+        };
+        await tx
+          .insert(facts)
+          .values({ id: randomUUID(), ...values })
+          .onConflictDoUpdate({ target: facts.slug, set: { ...values, updatedAt: sql`now()` } });
+      }
+    });
     const [{ s }] = (await pool.query("select count(*)::int as s from species")).rows;
+    const [{ f }] = (await pool.query("select count(*)::int as f from facts")).rows;
     const [{ m }] = (await pool.query("select count(*)::int as m from shark_of_the_month")).rows;
-    console.log(`Done. species: ${s}, featured months: ${m}.`);
+    console.log(`Done. species: ${s}, featured months: ${m}, facts: ${f}.`);
   } finally {
     await pool.end();
   }
