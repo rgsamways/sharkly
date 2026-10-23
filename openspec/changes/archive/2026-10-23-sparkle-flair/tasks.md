@@ -12,4 +12,4 @@
 ## 3. Release
 
 - [x] 3.1 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 3.2 After merge, check the live home page and a quiz result, and confirm decorations are hidden from assistive technology
+- [x] 3.2 After merge, check the live home page and a quiz result, and confirm decorations are hidden from assistive technology
