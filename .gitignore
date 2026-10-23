@@ -20,3 +20,6 @@ apps/web/.data/
 # Printed copies of the help (the owner edition is private)
 docs/print/
 .next-e2e*/
+
+.vercel
+.env*
