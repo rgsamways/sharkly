@@ -23,4 +23,4 @@
 - [x] 4.1 Check every new page at 360px wide: side margins, no sideways scrolling, and 44px tap targets
 - [x] 4.2 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
 - [x] 4.3 Add a short "Species content" section to the README (where the data lives, how to run the seed) and verify it lists the command
-- [ ] 4.4 After merge, run the migration and the seed against the production database as separate commands and verify `/sharks` and `/shark-of-the-month` on sharkly.ca show the content with search indexing still off
+- [x] 4.4 Before merging (the tables are only added, so the live site is unaffected), run the migration and the seed against the production database as separate commands and verify `/sharks` and `/shark-of-the-month` on sharkly.ca show the content with search indexing still off
