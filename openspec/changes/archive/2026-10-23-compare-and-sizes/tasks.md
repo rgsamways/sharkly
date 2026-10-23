@@ -12,4 +12,4 @@
 
 - [x] 3.1 Check both pages at 360px wide: no sideways scrolling, the comparison stacks, and 44px tap targets
 - [x] 3.2 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 3.3 After merge, verify both pages and a shared comparison link on sharkly.ca
+- [x] 3.3 After merge, verify both pages and a shared comparison link on sharkly.ca
