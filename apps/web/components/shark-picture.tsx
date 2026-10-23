@@ -7,6 +7,9 @@ import { imageAtWidth } from "@/lib/species-images";
 
 const TINTS = ["#1c8fa6", "#2a7fb8", "#3a8f8a", "#4a76b0", "#2f9aa0", "#5a82a8"];
 
+/** Photos where the whole fish would be cut off by the square crop, so they are shown in full. */
+const SHOW_WHOLE = new Set(["kitefin-shark", "spined-pygmy-shark"]);
+
 function tintFor(slug: string): string {
   let sum = 0;
   for (const char of slug) sum += char.charCodeAt(0);
@@ -77,7 +80,7 @@ export function SharkPicture({
         alt={name}
         loading={priority ? "eager" : "lazy"}
         decoding="async"
-        className="aspect-[3/2] w-full rounded-xl bg-surface-2 object-cover"
+        className={`aspect-[3/2] w-full rounded-xl bg-surface-2 ${SHOW_WHOLE.has(slug) ? "object-contain" : "object-cover"}`}
       />
       {imageCredit && (
         <figcaption className="mt-1 text-xs text-muted">
