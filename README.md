@@ -62,3 +62,7 @@ Members vote on a future Shark of the Month at `/vote`. Rounds and candidates ar
 - Read `/privacy` and `/terms`. They are plain-language drafts that describe what the site does today, not legal advice. Update them, and the date in `site.ts`, whenever a feature changes what is collected (the newsletter and payments are next).
 - Open the facts and species pages and read the wording; run `pnpm --filter @sharkly/web check:iucn` for a fresh status check.
 - Then set `ALLOW_INDEXING=true` in Vercel to let search engines in.
+
+## Deleting an account
+
+Members delete their own account from the account page: it emails a link to `/delete-account`, a page of ours with an explicit confirm button (opening the link never deletes anything), and removes the account, sign-in records and votes. The link is single-use and expires in an hour. Better Auth does the deleting; see `lib/auth.ts`.
