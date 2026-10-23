@@ -4,11 +4,12 @@ import type { Habitat, IucnStatus } from "@/lib/species-rules";
  * The shark content. This file is the source of truth: `pnpm seed:species` copies it into the
  * database. Edit the words here, in a pull request, and re-run the seed.
  *
- * How the facts were gathered: each species was researched on Wikipedia and FishBase. Both cite the
- * IUCN Red List, but the IUCN website itself blocked our automated lookups, so every conservation
- * status below is "as reported by Wikipedia and FishBase" and links to the species' IUCN page,
- * which has NOT been opened by us. Review the statuses (and the IUCN links) before search
- * indexing is switched on. Where sources disagreed we chose the more cautious number.
+ * How the facts were gathered: each species was researched on Wikipedia and FishBase, and then
+ * every conservation status, scientific name and assessment year was checked against the species'
+ * own IUCN Red List page on 2026-10-23 (all 30 statuses matched). The year stored is the year of the
+ * IUCN assessment, as the IUCN page states it. Where sources disagreed on a size or depth, the more
+ * cautious number was chosen. Statuses change when species are reassessed, so re-check them now and
+ * then.
  */
 
 export interface SpeciesEntry {
@@ -121,7 +122,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Deep-sea fish, squid and crustaceans such as shrimp",
     iucnStatus: "LC",
     iucnSourceUrl: iucn("44565/2994832"),
-    iucnAssessedYear: 2018,
+    iucnAssessedYear: 2017,
     summary:
       "A pink, soft-bodied shark from the deep sea with a long, flat snout. It is the only living member of a family that goes back about 125 million years, which is why people call it a living fossil.",
     weirdBit:
@@ -138,7 +139,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Fish such as cod and skates, seals, squid, and carrion",
     iucnStatus: "VU",
     iucnSourceUrl: iucn("60213/124452872"),
-    iucnAssessedYear: 2020,
+    iucnAssessedYear: 2019,
     summary:
       "A slow, big shark of the icy North Atlantic and Arctic. It cruises along at only about one kilometre an hour and spends much of its life in very cold, very deep water.",
     weirdBit:
@@ -156,7 +157,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Probably small deep-sea animals. Scientists have not studied what it eats yet.",
     iucnStatus: "LC",
     iucnSourceUrl: iucn("60240/124455061"),
-    iucnAssessedYear: 2020,
+    iucnAssessedYear: 2019,
     summary:
       "One of the smallest sharks in the world, small enough to rest on your hand. It lives in deep water off Colombia and Venezuela.",
     weirdBit:
@@ -227,7 +228,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Krill, jellyfish, shrimp larvae and other tiny animals filtered from the water",
     iucnStatus: "LC",
     iucnSourceUrl: iucn("39338/124402302"),
-    iucnAssessedYear: 2019,
+    iucnAssessedYear: 2018,
     summary:
       "A very rare, big, filter-feeding shark with an enormous mouth. Only a few hundred have ever been caught or seen, so we still know very little about it.",
     weirdBit:
@@ -245,7 +246,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Mostly schooling fish such as anchovies, sardines and herring, plus squid",
     iucnStatus: "VU",
     iucnSourceUrl: iucn("39339/212641186"),
-    iucnAssessedYear: 2019,
+    iucnAssessedYear: 2018,
     summary:
       "A shark with an amazing tail. The top lobe is almost as long as the rest of its body. It lives in warm and temperate seas and chases schools of small fish.",
     weirdBit:
@@ -261,7 +262,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Squid and fish such as mackerel and tuna, sometimes other sharks and dolphins",
     iucnStatus: "EN",
     iucnSourceUrl: iucn("39341/2903170"),
-    iucnAssessedYear: 2019,
+    iucnAssessedYear: 2018,
     summary:
       "The fastest known shark, built like a torpedo. It roams warm and temperate oceans, hunting fast fish such as tuna.",
     weirdBit:
@@ -279,7 +280,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Mainly squid, plus bony fish, small sharks and carrion",
     iucnStatus: "NT",
     iucnSourceUrl: iucn("39381/2915850"),
-    iucnAssessedYear: 2019,
+    iucnAssessedYear: 2018,
     summary:
       "A slim, graceful shark with a deep blue back and a long snout. It is one of the most widespread sharks in the world and travels huge distances across the open ocean.",
     weirdBit:
@@ -295,7 +296,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Small fish, stingrays, crustaceans, molluscs and sea urchins, found on the seabed",
     iucnStatus: "VU",
     iucnSourceUrl: iucn("144141186/3095153"),
-    iucnAssessedYear: 2021,
+    iucnAssessedYear: 2019,
     summary:
       "A sleepy-looking bottom dweller with whisker-like feelers on its chin. It often rests in groups under ledges during the day and hunts at night.",
     weirdBit:
@@ -313,7 +314,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Mostly fish eaten at night, plus crustaceans, rays and molluscs",
     iucnStatus: "VU",
     iucnSourceUrl: iucn("39380/2915472"),
-    iucnAssessedYear: 2021,
+    iucnAssessedYear: 2020,
     summary:
       "A yellow-brown shark of warm, shallow water, the colour of a lemon peel. Young lemon sharks grow up in sheltered places like mangrove shallows.",
     weirdBit:
@@ -385,7 +386,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Cuts round plugs of flesh from whales and large fish; also eats squid",
     iucnStatus: "LC",
     iucnSourceUrl: iucn("41830/2956761"),
-    iucnAssessedYear: 2018,
+    iucnAssessedYear: 2017,
     summary:
       "A small, cigar-shaped shark that spends the day deep down and rises toward the surface at night. It takes neat, round bites out of bigger animals, which leave marks like cookie-cutter holes.",
     weirdBit:
@@ -402,7 +403,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Mostly squid, plus smaller sharks, bony fish and sinking carrion",
     iucnStatus: "LC",
     iucnSourceUrl: iucn("41794/68617785"),
-    iucnAssessedYear: 2016,
+    iucnAssessedYear: 2015,
     summary:
       "An eel-like shark of the deep sea, with frilly gill covers and a mouth full of needle-sharp teeth. Its family goes back an enormous way, so it is often called a living fossil.",
     weirdBit:
@@ -420,7 +421,7 @@ export const speciesEntries: SpeciesEntry[] = [
     diet: "Flatfish and other bottom fish, crustaceans and molluscs, caught by ambush",
     iucnStatus: "CR",
     iucnSourceUrl: iucn("39332/117498371"),
-    iucnAssessedYear: 2019,
+    iucnAssessedYear: 2017,
     summary:
       "A flat shark that looks like a ray but is a true shark. It buries itself in sand or mud and waits for a fish to swim past.",
     weirdBit:
