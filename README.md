@@ -38,7 +38,7 @@ pnpm --filter @sharkly/web seed:content      # uses DATABASE_URL from apps/web/.
 
 It is safe to run more than once: species are matched by their slug and months by their month. It refuses to load an entry with no source link. New or changed database tables need `pnpm --filter @sharkly/web db:migrate` first.
 
-Conservation statuses come from Wikipedia and FishBase, which cite the IUCN Red List. The IUCN site itself was not opened, so check the IUCN links before turning search indexing on.
+Every conservation status, scientific name and assessment year was checked against the species' own IUCN Red List page. Species are reassessed over time, so run `pnpm --filter @sharkly/web check:iucn` now and then; it lists any species whose page no longer matches (it only reads).
 
 ## Facts
 
