@@ -9,7 +9,7 @@ export function SharkCard({ shark }: { shark: Species }) {
     <li>
       <Link
         href={`/sharks/${shark.slug}`}
-        className="block h-full rounded-2xl border border-line bg-surface p-3 transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        className="lift block h-full rounded-2xl border border-line bg-surface p-3 transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         <SharkPicture
           name={shark.commonName}

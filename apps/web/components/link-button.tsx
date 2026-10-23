@@ -5,7 +5,7 @@ const base =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50";
 
 const variants = {
-  primary: "bg-accent text-accent-fg hover:opacity-90",
+  primary: "shine bg-accent text-accent-fg hover:opacity-90",
   ghost: "border border-line-strong text-fg hover:border-fg",
 } as const;
 

@@ -105,7 +105,9 @@ async function FactOfTheDay() {
   if (!fact) return null;
   return (
     <section className="mt-12 rounded-2xl border-l-4 border-highlight bg-surface-2 p-5 sm:p-6">
-      <p className="text-xs font-bold tracking-wide text-highlight uppercase">Fact of the day</p>
+      <p className="eyebrow text-xs font-bold tracking-wide text-highlight uppercase">
+        Fact of the day
+      </p>
       <h2 className="mt-1 font-display text-2xl font-semibold">{fact.title}</h2>
       <p className="mt-2 text-lg">{fact.body}</p>
       <p className="mt-3 text-sm">

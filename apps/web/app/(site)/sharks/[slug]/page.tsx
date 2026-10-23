@@ -16,6 +16,11 @@ export async function generateMetadata({ params }: PageProps<"/sharks/[slug]">):
   return sharkPreview(slug) ?? { title: "Shark profile" };
 }
 
+// These pages look up the address first so that an unknown one answers a real 404 straight away.
+// Every real address is built ahead of time (generateStaticParams), so visitors still get them
+// instantly. Saying so here tells Next the wait is on purpose.
+export const instant = false;
+
 /**
  * The known slugs come from the content file, not the database, so building the site needs no
  * database. It also lets an unknown address answer 404 straight away, before any streaming starts.
