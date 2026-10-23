@@ -47,3 +47,7 @@ The shark facts and "myth or fact?" answers live in `apps/web/content/facts.ts`,
 ## Quiz
 
 "Which shark are you?" lives at `/quiz`. The questions and the eight results are in `apps/web/content/quiz.ts`; a unit test checks that every result is a real species and that every shark can be reached. It needs no database.
+
+## Photos
+
+Species photos come from Wikimedia Commons (public domain, CC BY, or CC BY-SA only) and are listed with their photographer and license in `apps/web/content/species-images.ts`; `seed:content` copies them onto the species rows and refuses a photo with no author or an unaccepted license. Credits show under the big photos and on `/credits`, which the footer links to. Photos load straight from Wikimedia's servers.

@@ -47,6 +47,8 @@ export function FeaturedSharkHero({
         slug={shark.slug}
         imageUrl={shark.imageUrl}
         imageCredit={shark.imageCredit}
+        imageCreditUrl={shark.imageCreditUrl}
+        priority
       />
     </section>
   );

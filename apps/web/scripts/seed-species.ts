@@ -13,9 +13,11 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import pg from "pg";
 import { factEntries } from "../content/facts";
 import { featuredMonths, speciesEntries } from "../content/species";
+import { speciesImages } from "../content/species-images";
 import { facts } from "../db/facts-schema";
 import { sharkOfTheMonth, species } from "../db/species-schema";
 import { FACT_TOPICS, VERDICTS } from "../lib/fact-rules";
+import { ALLOWED_LICENSES, creditText } from "../lib/species-images";
 import { HABITATS, IUCN_STATUSES } from "../lib/species-rules";
 
 function check(): string[] {
@@ -47,6 +49,18 @@ function check(): string[] {
     }
     if (!s.summary.trim() || !s.weirdBit.trim())
       problems.push(`${where}: summary and weirdBit are required`);
+  }
+  for (const [slug, image] of Object.entries(speciesImages)) {
+    if (!slugs.has(slug)) problems.push(`photo for "${slug}": no species with that slug`);
+    if (!image.photographer && !/^public domain$/i.test(image.license)) {
+      problems.push(`photo for "${slug}": needs a photographer (only public domain may omit one)`);
+    }
+    if (!ALLOWED_LICENSES.test(image.license)) {
+      problems.push(`photo for "${slug}": license "${image.license}" is not one we accept`);
+    }
+    if (!/^https:\/\//.test(image.url) || !/^https:\/\//.test(image.filePage)) {
+      problems.push(`photo for "${slug}": url and filePage must be https links`);
+    }
   }
   const months = new Set<string>();
   for (const m of featuredMonths) {
@@ -109,6 +123,9 @@ async function main() {
           summary: s.summary,
           weirdBit: s.weirdBit,
           sources: s.sources,
+          imageUrl: speciesImages[s.slug]?.url ?? null,
+          imageCredit: speciesImages[s.slug] ? creditText(speciesImages[s.slug]!) : null,
+          imageCreditUrl: speciesImages[s.slug]?.filePage ?? null,
         };
         await tx
           .insert(species)

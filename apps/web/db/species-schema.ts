@@ -48,6 +48,8 @@ export const species = pgTable(
     sources: jsonb("sources").$type<SpeciesSource[]>().notNull(),
     imageUrl: text("image_url"),
     imageCredit: text("image_credit"),
+    /** Where the credit links to: the image's page on Wikimedia Commons. */
+    imageCreditUrl: text("image_credit_url"),
   },
   (t) => [
     uniqueIndex("species_slug_key").on(t.slug),
