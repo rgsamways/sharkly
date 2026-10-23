@@ -1,11 +1,81 @@
+import Link from "next/link";
+import { connection } from "next/server";
+import { Suspense } from "react";
+import { FeaturedSharkHero } from "@/components/featured-shark";
+import { LinkButton } from "@/components/link-button";
+import { SharkPicture } from "@/components/shark-picture";
 import { site } from "@/content/site";
+import { getHomeFeatures } from "@/lib/species";
+import { monthLabel } from "@/lib/species-rules";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center gap-4 px-4 py-16 sm:px-6">
-      <h1 className="font-display text-5xl font-semibold">{site.name}</h1>
-      <p className="text-lg text-muted">{site.tagline}</p>
-      <p>The Shark of the Month club is coming soon.</p>
+    <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 sm:py-12">
+      <Suspense fallback={<Welcome />}>
+        <Features />
+      </Suspense>
+      <section className="mt-12 rounded-2xl border border-line bg-surface p-6 text-center sm:p-8">
+        <h2 className="font-display text-3xl font-semibold">Join the Shark of the Month club</h2>
+        <p className="mx-auto mt-2 max-w-xl text-lg text-muted">
+          One shark every month, with the best facts and the weirdest details. It&apos;s free.
+        </p>
+        <div className="mt-5 flex justify-center">
+          <LinkButton href="/join">Join for free</LinkButton>
+        </div>
+      </section>
     </main>
+  );
+}
+
+/** Shown while the page loads, and when no shark has been featured yet. */
+function Welcome() {
+  return (
+    <section className="py-8">
+      <h1 className="font-display text-5xl font-semibold">{site.name}</h1>
+      <p className="mt-3 max-w-2xl text-lg text-muted">{site.tagline}</p>
+      <div className="mt-5">
+        <LinkButton href="/sharks" variant="ghost">
+          Browse all the sharks
+        </LinkButton>
+      </div>
+    </section>
+  );
+}
+
+async function Features() {
+  await connection();
+  const { current, previous } = await getHomeFeatures();
+  if (!current) return <Welcome />;
+  return (
+    <>
+      <FeaturedSharkHero feature={current} isCurrent={current.isCurrent} />
+      {previous.length > 0 && (
+        <section className="mt-12">
+          <h2 className="font-display text-2xl font-semibold">Sharks we have met</h2>
+          <ul className="mt-4 grid gap-4 sm:grid-cols-3">
+            {previous.map(({ month, teaser, species: shark }) => (
+              <li key={month}>
+                <Link
+                  href={`/sharks/${shark.slug}`}
+                  className="block h-full rounded-2xl border border-line bg-surface p-3 transition-colors hover:border-accent"
+                >
+                  <SharkPicture
+                    name={shark.commonName}
+                    slug={shark.slug}
+                    imageUrl={shark.imageUrl}
+                    imageCredit={null}
+                  />
+                  <p className="mt-3 text-xs font-bold tracking-wide text-highlight uppercase">
+                    {monthLabel(month)}
+                  </p>
+                  <h3 className="font-display text-xl font-semibold">{shark.commonName}</h3>
+                  <p className="text-sm text-muted">{teaser}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </>
   );
 }
