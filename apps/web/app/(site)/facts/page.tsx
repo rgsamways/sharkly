@@ -73,8 +73,8 @@ function TopicChoices({
     })),
   ];
   return (
-    <nav aria-label="Topics" className="mt-6 -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-      <ul className="flex gap-2 sm:flex-wrap">
+    <nav aria-label="Topics" className="mt-6">
+      <ul className="flex flex-wrap gap-2">
         {choices.map((c) => (
           <li key={c.href} className="shrink-0">
             <Link

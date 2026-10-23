@@ -1,5 +1,7 @@
 export const site = {
   name: "Sharkly",
+  /** The year shown in the footer copyright line. */
+  since: 2026,
   tagline: "Meet a new shark every month. Facts for curious kids and grown-ups.",
   /**
    * An address that receives mail, shown on the privacy and terms pages. Leave it empty until a

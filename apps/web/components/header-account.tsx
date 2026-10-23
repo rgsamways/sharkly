@@ -6,9 +6,12 @@ import { UserMenu } from "./user-menu";
 export function SignedOutLinks() {
   return (
     <div className="flex items-center gap-2">
-      <LinkButton href="/sign-in" variant="ghost" className="px-4">
-        Sign in
-      </LinkButton>
+      {/* Phones sign in from the menu, which keeps the header on one row. */}
+      <span className="hidden sm:block">
+        <LinkButton href="/sign-in" variant="ghost" className="px-4">
+          Sign in
+        </LinkButton>
+      </span>
       <LinkButton href="/join" className="px-4">
         <span className="sm:hidden">Join</span>
         <span className="hidden sm:inline">Join the club</span>
