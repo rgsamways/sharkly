@@ -268,6 +268,17 @@ export function JoinForm() {
         </Button>
         {error && <Problem>{error}</Problem>}
         <p className="text-sm text-muted">
+          By joining you agree to the{" "}
+          <Link href="/terms" className={textLink}>
+            terms
+          </Link>{" "}
+          and the{" "}
+          <Link href="/privacy" className={textLink}>
+            privacy page
+          </Link>
+          .
+        </p>
+        <p className="text-sm text-muted">
           Already a member?{" "}
           <Link href="/sign-in" className={textLink}>
             Sign in

@@ -55,3 +55,10 @@ Species photos come from Wikimedia Commons (public domain, CC BY, or CC BY-SA on
 ## Voting
 
 Members vote on a future Shark of the Month at `/vote`. Rounds and candidates are in `apps/web/content/voting.ts`; the open round is the earliest whose month has not started. One vote per member per round is enforced by the database. When a round ends, add the winner to `featuredMonths` in `content/species.ts` by hand and run `seed:content`.
+
+## Before going public
+
+- Set `contactEmail` in `apps/web/content/site.ts` to an address that receives mail. The privacy and terms pages leave the contact section out until it is set. (`hello@sharkly.ca` sends mail but does not receive it yet.)
+- Read `/privacy` and `/terms`. They are plain-language drafts that describe what the site does today, not legal advice. Update them, and the date in `site.ts`, whenever a feature changes what is collected (the newsletter and payments are next).
+- Open the facts and species pages and read the wording; run `pnpm --filter @sharkly/web check:iucn` for a fresh status check.
+- Then set `ALLOW_INDEXING=true` in Vercel to let search engines in.
