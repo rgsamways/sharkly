@@ -8,4 +8,4 @@
 
 - [x] 2.1 Seed the local database twice and verify 50 species both times
 - [x] 2.2 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 2.3 Run the seed against the production database before merging, and verify the new sharks, their photos and the sitemap on sharkly.ca after the deploy
+- [x] 2.3 Run the seed against the production database before merging, and verify the new sharks, their photos and the sitemap on sharkly.ca after the deploy

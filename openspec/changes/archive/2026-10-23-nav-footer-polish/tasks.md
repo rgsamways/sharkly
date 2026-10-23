@@ -16,4 +16,4 @@
 ## 4. Release
 
 - [x] 4.1 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 4.2 After merge, check the live header, menu, footer and scrollbars at phone and desktop widths
+- [x] 4.2 After merge, check the live header, menu, footer and scrollbars at phone and desktop widths

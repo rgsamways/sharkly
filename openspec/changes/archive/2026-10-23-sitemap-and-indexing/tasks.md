@@ -6,4 +6,4 @@
 ## 2. Release
 
 - [x] 2.1 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 2.2 After merge, set `ALLOW_INDEXING=true` in Vercel production and redeploy; verify `robots.txt` allows crawling and names the sitemap, a public page is not marked do-not-index, and the account and sign-in pages still are
+- [x] 2.2 After merge, set `ALLOW_INDEXING=true` in Vercel production and redeploy; verify `robots.txt` allows crawling and names the sitemap, a public page is not marked do-not-index, and the account and sign-in pages still are
