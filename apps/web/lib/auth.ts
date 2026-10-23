@@ -4,7 +4,12 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
 import { magicLink } from "better-auth/plugins/magic-link";
 import * as authSchema from "@/db/auth-schema";
-import { sendPasswordReset, sendSignInLink, sendVerifyEmail } from "./email/auth-emails";
+import {
+  sendDeleteAccount,
+  sendPasswordReset,
+  sendSignInLink,
+  sendVerifyEmail,
+} from "./email/auth-emails";
 import { isQuiet } from "./auth-quiet";
 import { getDb } from "./db";
 import { getEnv } from "./env";
@@ -36,6 +41,18 @@ function createAuth() {
       additionalFields: {
         // `input: false` means a request can never set it, so nobody can sign up as an admin.
         role: { type: "string", required: true, defaultValue: "customer", input: false },
+      },
+      deleteUser: {
+        enabled: true,
+        // The link is good for an hour and works once. It opens our own page, which asks again
+        // before anything is deleted, so an email scanner opening the link can't delete anyone.
+        deleteTokenExpiresIn: 60 * 60,
+        sendDeleteAccountVerification: async ({ user, token }) => {
+          await sendDeleteAccount(
+            user.email,
+            `${env.BETTER_AUTH_URL}/delete-account?token=${encodeURIComponent(token)}`,
+          );
+        },
       },
     },
     session: {

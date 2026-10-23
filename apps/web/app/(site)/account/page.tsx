@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { SignOutButton } from "@/components/auth-forms";
+import { RequestDeleteButton } from "@/components/delete-account";
 import { requireUser } from "@/lib/session";
 
 export const metadata: Metadata = { title: "Your account", robots: { index: false } };
@@ -37,6 +38,16 @@ async function AccountContents() {
       </p>
       <div className="mt-6">
         <SignOutButton />
+      </div>
+      <div className="mt-10 border-t border-line pt-6">
+        <h2 className="font-display text-xl font-semibold">Delete my account</h2>
+        <p className="mt-2 text-muted">
+          This removes your account, your sign-in records and your votes for good. We&rsquo;ll email
+          you a link first, and nothing is deleted until you confirm.
+        </p>
+        <div className="mt-4">
+          <RequestDeleteButton />
+        </div>
       </div>
     </section>
   );

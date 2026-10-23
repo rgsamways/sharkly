@@ -92,7 +92,9 @@ export default function PrivacyPage() {
       <h2>Your choices</h2>
       <p>
         You can ask to see what we hold about you, to correct it, or to have your account deleted.
-        There is no delete button yet, so please ask us.
+        You can delete your account yourself from your account page. We email you a link, and
+        nothing is deleted until you confirm. Deleting removes your account, sign-in records and
+        votes.
       </p>
 
       <h2>Changes</h2>

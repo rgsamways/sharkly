@@ -52,8 +52,8 @@ export default function TermsPage() {
 
       <h2>Ending an account</h2>
       <p>
-        You can ask us to delete your account at any time. We may close an account that misuses the
-        site.
+        You can delete your account yourself at any time, from your account page. We may close an
+        account that misuses the site.
       </p>
 
       <h2>No guarantees</h2>
