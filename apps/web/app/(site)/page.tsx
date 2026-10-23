@@ -19,6 +19,15 @@ export default function HomePage() {
         <FactOfTheDay />
       </Suspense>
       <section className="mt-12 rounded-2xl border border-line bg-surface p-6 text-center sm:p-8">
+        <h2 className="font-display text-3xl font-semibold">Which shark are you?</h2>
+        <p className="mx-auto mt-2 max-w-xl text-lg text-muted">
+          Six quick questions, and we will match you with a shark.
+        </p>
+        <div className="mt-5 flex justify-center">
+          <LinkButton href="/quiz">Take the quiz</LinkButton>
+        </div>
+      </section>
+      <section className="mt-12 rounded-2xl border border-line bg-surface p-6 text-center sm:p-8">
         <h2 className="font-display text-3xl font-semibold">Join the Shark of the Month club</h2>
         <p className="mx-auto mt-2 max-w-xl text-lg text-muted">
           One shark every month, with the best facts and the weirdest details. It&apos;s free.

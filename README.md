@@ -43,3 +43,7 @@ Conservation statuses come from Wikipedia and FishBase, which cite the IUCN Red 
 ## Facts
 
 The shark facts and "myth or fact?" answers live in `apps/web/content/facts.ts`, each with its sources, and are loaded by the same `seed:content` command. The home page shows one fact a day, chosen by the Toronto date, from the entries that are not myths. Entries marked as medium confidence in comments there are worth a second look before search indexing is switched on.
+
+## Quiz
+
+"Which shark are you?" lives at `/quiz`. The questions and the eight results are in `apps/web/content/quiz.ts`; a unit test checks that every result is a real species and that every shark can be reached. It needs no database.

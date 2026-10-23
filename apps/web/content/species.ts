@@ -140,7 +140,7 @@ export const speciesEntries: SpeciesEntry[] = [
     iucnSourceUrl: iucn("60213/124452872"),
     iucnAssessedYear: 2020,
     summary:
-      "A slow, big shark of the icy North Atlantic and Arctic. It cruises along at under one kilometre an hour and spends much of its life in very cold, very deep water.",
+      "A slow, big shark of the icy North Atlantic and Arctic. It cruises along at only about one kilometre an hour and spends much of its life in very cold, very deep water.",
     weirdBit:
       "The Greenland shark may live for hundreds of years. Scientists dated the lenses of their eyes and estimated lifespans of at least 272 years, which makes it the longest-lived backboned animal we know of.",
     sources: [wiki("Greenland_shark"), fishbase("Somniosus-microcephalus")],
