@@ -3,6 +3,8 @@
  * alternative naming the species. A real image always shows its credit.
  */
 
+import { imageAtWidth } from "@/lib/species-images";
+
 const TINTS = ["#1c8fa6", "#2a7fb8", "#3a8f8a", "#4a76b0", "#2f9aa0", "#5a82a8"];
 
 function tintFor(slug: string): string {
@@ -47,26 +49,51 @@ export function SharkPicture({
   slug,
   imageUrl,
   imageCredit,
+  imageCreditUrl = null,
   compact = false,
+  width = 960,
+  priority = false,
 }: {
   name: string;
   slug: string;
   imageUrl: string | null;
+  /** The visible credit line. Shown under the photo when there is one. */
   imageCredit: string | null;
+  /** Where the credit links to (the image's page on Wikimedia Commons). */
+  imageCreditUrl?: string | null;
   /** Small thumbnails leave out the "coming soon" caption, which would not fit. */
   compact?: boolean;
+  /** Cards and thumbnails ask Wikimedia for the smaller 500 pixel version. */
+  width?: 500 | 960;
+  /** The first photo on a page loads right away; the rest load as you scroll. */
+  priority?: boolean;
 }) {
   if (!imageUrl) return <Silhouette name={name} slug={slug} compact={compact} />;
   return (
     <figure>
-      {/* eslint-disable-next-line @next/next/no-img-element -- remote hosts are not configured yet */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- Wikimedia serves the sizes for us */}
       <img
-        src={imageUrl}
+        src={imageAtWidth(imageUrl, width)}
         alt={name}
-        loading="lazy"
-        className="aspect-[3/2] w-full rounded-xl object-cover"
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        className="aspect-[3/2] w-full rounded-xl bg-surface-2 object-cover"
       />
-      {imageCredit && <figcaption className="mt-1 text-xs text-muted">{imageCredit}</figcaption>}
+      {imageCredit && (
+        <figcaption className="mt-1 text-xs text-muted">
+          {imageCreditUrl ? (
+            <a
+              href={imageCreditUrl}
+              rel="noopener noreferrer"
+              className="underline underline-offset-2"
+            >
+              {imageCredit}
+            </a>
+          ) : (
+            imageCredit
+          )}
+        </figcaption>
+      )}
     </figure>
   );
 }

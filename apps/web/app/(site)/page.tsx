@@ -77,6 +77,7 @@ async function Features() {
                     slug={shark.slug}
                     imageUrl={shark.imageUrl}
                     imageCredit={null}
+                    width={500}
                   />
                   <p className="mt-3 text-xs font-bold tracking-wide text-highlight uppercase">
                     {monthLabel(month)}

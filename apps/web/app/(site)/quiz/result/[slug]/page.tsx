@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { LinkButton } from "@/components/link-button";
 import { SharkPicture } from "@/components/shark-picture";
 import { quizResults } from "@/content/quiz";
+import { speciesImages } from "@/content/species-images";
+import { creditText } from "@/lib/species-images";
 
 export function generateStaticParams() {
   return quizResults.map((r) => ({ slug: r.slug }));
@@ -21,6 +23,7 @@ export default async function QuizResultPage({ params }: PageProps<"/quiz/result
   const { slug } = await params;
   const result = quizResults.find((r) => r.slug === slug);
   if (!result) notFound();
+  const photo = speciesImages[result.slug];
 
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
@@ -31,7 +34,14 @@ export default async function QuizResultPage({ params }: PageProps<"/quiz/result
         You&apos;re a {result.title}!
       </h1>
       <div className="mt-6">
-        <SharkPicture name={result.title} slug={result.slug} imageUrl={null} imageCredit={null} />
+        <SharkPicture
+          name={result.title}
+          slug={result.slug}
+          imageUrl={photo?.url ?? null}
+          imageCredit={photo ? creditText(photo) : null}
+          imageCreditUrl={photo?.filePage ?? null}
+          priority
+        />
       </div>
       <p className="mt-6 text-lg">{result.description}</p>
       <div className="mt-6 flex flex-wrap gap-3">

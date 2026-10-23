@@ -16,6 +16,7 @@ export function SharkCard({ shark }: { shark: Species }) {
           slug={shark.slug}
           imageUrl={shark.imageUrl}
           imageCredit={null}
+          width={500}
         />
         <h3 className="mt-3 font-display text-xl font-semibold">{shark.commonName}</h3>
         <p className="text-sm text-muted">

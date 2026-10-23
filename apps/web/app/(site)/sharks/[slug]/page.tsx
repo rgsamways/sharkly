@@ -58,6 +58,8 @@ async function Profile({ slug }: { slug: string }) {
           slug={shark.slug}
           imageUrl={shark.imageUrl}
           imageCredit={shark.imageCredit}
+          imageCreditUrl={shark.imageCreditUrl}
+          priority
         />
         <div className="rounded-2xl border border-line bg-surface p-5">
           <h2 className="font-display text-xl font-semibold">Size, compared with you</h2>

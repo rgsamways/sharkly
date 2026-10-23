@@ -54,6 +54,7 @@ async function Entries() {
                 slug={shark.slug}
                 imageUrl={shark.imageUrl}
                 imageCredit={null}
+                width={500}
                 compact
               />
             </div>
