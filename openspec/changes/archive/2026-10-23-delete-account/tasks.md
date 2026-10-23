@@ -16,4 +16,4 @@
 ## 4. Release
 
 - [x] 4.1 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 4.2 After merge, verify the account page and the confirmation page on sharkly.ca (without deleting a real account)
+- [x] 4.2 After merge, verify the account page and the confirmation page on sharkly.ca (without deleting a real account)
