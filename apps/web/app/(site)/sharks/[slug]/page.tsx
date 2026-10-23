@@ -29,9 +29,20 @@ export default async function SharkProfilePage({ params }: PageProps<"/sharks/[s
   if (!speciesEntries.some((s) => s.slug === slug)) notFound();
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
-      <Link href="/sharks" className="text-sm underline underline-offset-4">
-        All the sharks
-      </Link>
+      <p className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
+        <Link
+          href="/sharks"
+          className="inline-flex min-h-11 items-center underline underline-offset-4"
+        >
+          All the sharks
+        </Link>
+        <Link
+          href={`/compare?a=${slug}`}
+          className="inline-flex min-h-11 items-center underline underline-offset-4"
+        >
+          Compare with another shark
+        </Link>
+      </p>
       <Suspense fallback={<div className="mt-6 h-96 animate-pulse rounded-2xl bg-surface-2" />}>
         <Profile slug={slug} />
       </Suspense>

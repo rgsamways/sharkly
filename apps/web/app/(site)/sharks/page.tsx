@@ -28,6 +28,20 @@ export default function SharksPage({ searchParams }: PageProps<"/sharks">) {
         Search by name, or narrow the list by where a shark lives, how big it gets, and how worried
         we are about it.
       </p>
+      <p className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm">
+        <Link
+          href="/sharks/sizes"
+          className="inline-flex min-h-11 items-center underline underline-offset-4"
+        >
+          Size lineup: every shark next to you
+        </Link>
+        <Link
+          href="/compare"
+          className="inline-flex min-h-11 items-center underline underline-offset-4"
+        >
+          Compare two sharks
+        </Link>
+      </p>
       <Suspense fallback={<div className="mt-8 h-64 animate-pulse rounded-2xl bg-surface-2" />}>
         <Browser searchParams={searchParams} />
       </Suspense>
