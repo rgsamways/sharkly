@@ -1,0 +1,22 @@
+node_modules
+.next
+dist
+coverage
+*.tsbuildinfo
+.vercel
+.env
+.env.*
+!.env.example
+.DS_Store
+test-results*
+playwright-report
+
+# Private notes (costs, pricing). Never committed.
+docs/internal/
+
+# Photos uploaded while developing
+apps/web/.data/
+
+# Printed copies of the help (the owner edition is private)
+docs/print/
+.next-e2e*/

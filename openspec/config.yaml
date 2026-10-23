@@ -1,0 +1,36 @@
+schema: spec-driven
+
+context: |
+  Sharkly: a public website about sharks, with a "Shark of the Month" club. Robin is the developer
+  and owner. Readers range from young children to adults, so wording is friendly, plain and
+  accurate, never babyish. Facts must be true and carry a source.
+
+  Stack (reused from Monkeyback): pnpm monorepo. Next.js 16 (cacheComponents, server actions,
+  `use cache`), React 19, Tailwind 4, shadcn/Radix. Drizzle + Postgres. Better Auth (roles
+  customer < admin < developer; emailed link or password). Resend for email. Vercel for hosting.
+  Layout: apps/web (the site and admin). Shop and payments are NOT built yet; when revenue is
+  wanted, port the Stripe setup and commerce rules from C:\dev\monkeyback.
+
+  Conventions:
+  - Public pages are readable without an account. The club (profiles, votes, badges) needs one.
+  - Admin pages and server actions each check the role again; the layout alone is not protection.
+  - Anything an admin changes writes an audit-log entry (lib/audit.ts).
+  - Species and facts keep a source link. Conservation status comes from the IUCN Red List.
+  - Mobile first. Every page must look good and work on a phone (about 360px wide) and a tablet:
+    side gutters, a navigation menu that stays reachable, tap targets of at least 44px, and no
+    sideways scrolling. Children may read on phones and tablets.
+  - Never print secrets. Env values go in with `vercel env add`, never in chat or in git.
+  - Keep testing light: fast unit tests only, no browser e2e suite, no long database suites.
+    CI must finish in a few minutes.
+
+  Safety locks that stay on until Robin decides: ALLOW_INDEXING off, newsletters blocked in
+  production until a postal address is set (content/site.ts), no payments code.
+
+rules:
+  proposal:
+    - Say what Robin needs to decide or provide, if anything.
+    - Name which safety locks the change touches.
+  tasks:
+    - Update the README or docs when a user-facing feature lands.
+    - Add unit tests only where a rule is easy to get wrong; avoid slow tests.
+    - Include a check that new pages work at phone width.
