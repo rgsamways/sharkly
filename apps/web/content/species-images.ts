@@ -262,4 +262,167 @@ export const speciesImages: Record<string, SpeciesImage> = {
     licenseUrl: "https://creativecommons.org/licenses/by/2.5",
     filePage: "https://commons.wikimedia.org/wiki/File:Carcharhinus_falciformis_off_Cuba.jpg",
   },
+  // Oceanic whitetip shark
+  "oceanic-whitetip-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Oceanic_Whitetip_Shark_%28cropped%29.jpg/960px-Oceanic_Whitetip_Shark_%28cropped%29.jpg",
+    photographer: "Johan Lantz",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "http://creativecommons.org/licenses/by-sa/3.0/",
+    filePage: "https://commons.wikimedia.org/wiki/File:Oceanic_Whitetip_Shark_(cropped).jpg",
+  },
+  // Zebra shark
+  "zebra-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Zebra_Shark_at_Sydney_Sea_Life_Aquarium.png/960px-Zebra_Shark_at_Sydney_Sea_Life_Aquarium.png",
+    photographer: "Felix Frost-Savage",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Zebra_Shark_at_Sydney_Sea_Life_Aquarium.png",
+  },
+  // Tasselled wobbegong
+  "tasselled-wobbegong": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tasselled_wobbegong_%28Eucrossorhinus_dasypogon%29_-_49929002423.jpg/960px-Tasselled_wobbegong_%28Eucrossorhinus_dasypogon%29_-_49929002423.jpg",
+    photographer: "Rickard Zerpe",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    filePage:
+      "https://commons.wikimedia.org/wiki/File:Tasselled_wobbegong_(Eucrossorhinus_dasypogon)_-_49929002423.jpg",
+  },
+  // Bonnethead
+  bonnethead: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/5/50/Sphyrna_tiburo_mote_marine.jpg",
+    photographer: "Markus from Sarasota",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Sphyrna_tiburo_mote_marine.jpg",
+  },
+  // Smooth hammerhead
+  "smooth-hammerhead": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Sphyrna_zygaena_in_a_tank.jpg/960px-Sphyrna_zygaena_in_a_tank.jpg",
+    photographer: "出羽雀台",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Sphyrna_zygaena_in_a_tank.jpg",
+  },
+  // Broadnose sevengill shark
+  "broadnose-sevengill-shark": {
+    url: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Notorynchus_cepedianus_SI4.jpg",
+    photographer: "D Ross Robertson",
+    license: "Public domain",
+    licenseUrl: null,
+    filePage: "https://commons.wikimedia.org/wiki/File:Notorynchus_cepedianus_SI4.jpg",
+  },
+  // Bluntnose sixgill shark
+  "bluntnose-sixgill-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Hexanchus_griseus_santa_rosa.jpg/960px-Hexanchus_griseus_santa_rosa.jpg",
+    photographer: "NOAA Ocean Explorer",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Hexanchus_griseus_santa_rosa.jpg",
+  },
+  // Swell shark
+  "swell-shark": {
+    url: "https://upload.wikimedia.org/wikipedia/commons/3/33/Swell_Shark%2C_San_Clemente_Island%2C_California.jpg",
+    photographer: "Aquaimages",
+    license: "CC BY-SA 2.5",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.5",
+    filePage:
+      "https://commons.wikimedia.org/wiki/File:Swell_Shark,_San_Clemente_Island,_California.jpg",
+  },
+  // Small-spotted catshark
+  "small-spotted-catshark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Scyliorhinus_canicula.jpg/960px-Scyliorhinus_canicula.jpg",
+    photographer: "Hans Hillewaert",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Scyliorhinus_canicula.jpg",
+  },
+  // Port Jackson shark
+  "port-jackson-shark": {
+    url: "https://upload.wikimedia.org/wikipedia/commons/3/35/Heterodontus_portusjacksoni_wilsons_promontory.jpg",
+    photographer: "Mark Norman / Museum Victoria",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0",
+    filePage:
+      "https://commons.wikimedia.org/wiki/File:Heterodontus_portusjacksoni_wilsons_promontory.jpg",
+  },
+  // Sandbar shark
+  "sandbar-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Carcharhinus_plumbeus_georgia.jpg/960px-Carcharhinus_plumbeus_georgia.jpg",
+    photographer: "Brian Gratwicke",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Carcharhinus_plumbeus_georgia.jpg",
+  },
+  // Galapagos shark
+  "galapagos-shark": {
+    url: "https://upload.wikimedia.org/wikipedia/commons/5/53/Carcharinus_galapagensis_1.jpg",
+    photographer: "Dr. Dwayne Meadows, NOAA/NMFS/OPR",
+    license: "Public domain",
+    licenseUrl: null,
+    filePage: "https://commons.wikimedia.org/wiki/File:Carcharinus_galapagensis_1.jpg",
+  },
+  // Caribbean reef shark
+  "caribbean-reef-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Caribbean_reef_sharks2.jpg/960px-Caribbean_reef_sharks2.jpg",
+    photographer: "Albert Kok",
+    license: "CC0",
+    licenseUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    filePage: "https://commons.wikimedia.org/wiki/File:Caribbean_reef_sharks2.jpg",
+  },
+  // Grey reef shark
+  "grey-reef-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Corl0207_%2828225976491%29.jpg/960px-Corl0207_%2828225976491%29.jpg",
+    photographer: "NOAA Photo Library",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Corl0207_(28225976491).jpg",
+  },
+  // Blacktip shark
+  "blacktip-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Carcharhinus_limbatus_%282%29.jpg/960px-Carcharhinus_limbatus_%282%29.jpg",
+    photographer: "Albert kok",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Carcharhinus_limbatus_(2).jpg",
+  },
+  // Bigeye thresher
+  "bigeye-thresher": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Alopias_superciliosus.jpg/960px-Alopias_superciliosus.jpg",
+    photographer: "PIRO-NOAA Observer Program",
+    license: "Public domain",
+    licenseUrl: null,
+    filePage: "https://commons.wikimedia.org/wiki/File:Alopias_superciliosus.jpg",
+  },
+  // Kitefin shark
+  "kitefin-shark": {
+    url: "https://upload.wikimedia.org/wikipedia/commons/d/db/Dalatias_licha_csiro-nfc.jpg",
+    photographer: "CSIRO National Fish Collection",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Dalatias_licha_csiro-nfc.jpg",
+  },
+  // Crocodile shark
+  "crocodile-shark": {
+    url: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Pseudocarcharias_kamoharai.jpg",
+    photographer: "NOAA Observer Program",
+    license: "Public domain",
+    licenseUrl: null,
+    filePage: "https://commons.wikimedia.org/wiki/File:Pseudocarcharias_kamoharai.jpg",
+  },
+  // Spined pygmy shark
+  "spined-pygmy-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Spined_pygmy_shark_nmfs.jpg/960px-Spined_pygmy_shark_nmfs.jpg",
+    photographer: "SEFSC Pascagoula Laboratory, NOAA",
+    license: "Public domain",
+    licenseUrl: null,
+    filePage: "https://commons.wikimedia.org/wiki/File:Spined_pygmy_shark_nmfs.jpg",
+  },
+  // Pyjama shark
+  "pyjama-shark": {
+    url: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Poroderma_africanum.jpg/960px-Poroderma_africanum.jpg",
+    photographer: "Guido Zsilavecz",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
+    filePage: "https://commons.wikimedia.org/wiki/File:Poroderma_africanum.jpg",
+  },
 };
