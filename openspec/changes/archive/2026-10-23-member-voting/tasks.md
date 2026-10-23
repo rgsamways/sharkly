@@ -14,4 +14,4 @@
 
 - [x] 3.1 Check `/vote` and the home page at 360px wide: no sideways scrolling and 44px tap targets
 - [x] 3.2 Run the same checks as CI (`pnpm format:check`, `typecheck`, `lint`, `test`, `build`) and verify all pass
-- [ ] 3.3 Run the migration against the production database before merging, and verify `/vote` on sharkly.ca after the deploy
+- [x] 3.3 Run the migration against the production database before merging, and verify `/vote` on sharkly.ca after the deploy
